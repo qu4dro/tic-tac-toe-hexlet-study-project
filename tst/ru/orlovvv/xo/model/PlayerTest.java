@@ -9,6 +9,7 @@ class PlayerTest {
     @Test
     void getName() {
         final String testName = "Peter";
+
         final String expectedName = testName;
 
         final Player player = new Player(testName, null);
@@ -20,7 +21,9 @@ class PlayerTest {
 
     @Test
     void getFigure() {
+
         final Figure testValue = Figure.X;
+
         final Figure expectedValue = testValue;
 
         final Player player = new Player(null, testValue);
