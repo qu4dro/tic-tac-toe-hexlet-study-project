@@ -8,6 +8,7 @@ class PlayerTest {
 
     @Test
     void getName() {
+
         final String testName = "Peter";
 
         final String expectedName = testName;
