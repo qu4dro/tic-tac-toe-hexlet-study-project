@@ -12,6 +12,7 @@ public class Main {
         final String name2 = "Ivan";
 
         final Player[] players = new Player[2];
+
         players[0] = new Player(name1, Figure.X);
         players[1] = new Player(name2, Figure.O);
 
@@ -19,7 +20,7 @@ public class Main {
 
         final ConsoleView consoleView = new ConsoleView();
         consoleView.show(game);
-        while(consoleView.move(game)) {
+        while (consoleView.move(game)) {
             consoleView.show(game);
         }
 

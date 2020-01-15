@@ -39,19 +39,17 @@ public class ConsoleView {
         try {
             final Figure currentFigure = currentMoveController.currentMove(field);
             if (currentFigure == null) {
-                    System.out.println("No winner");
-                    return false;
+                System.out.println("No winner");
+                return false;
             }
             System.out.format("Please enter move point for: %s\n", currentFigure);
             final Point point = askPoint();
             try {
                 moveController.applyFigure(field, point, currentFigure);
             } catch (AlreadyOccupiedException | InvalidPointException e) {
-                //e.printStackTrace();
                 System.out.println("Point is incorrect");
             }
         } catch (InvalidPointException e) {
-            //e.printStackTrace();
 
         }
         return true;
@@ -82,7 +80,6 @@ public class ConsoleView {
             try {
                 figure = field.getFigure(new Point(y, x));
             } catch (InvalidPointException e) {
-                //e.printStackTrace();
                 throw new RuntimeException(e);
             }
             System.out.print(figure != null ? figure : " ");
