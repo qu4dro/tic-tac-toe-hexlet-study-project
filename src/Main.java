@@ -16,7 +16,7 @@ public class Main {
         players[0] = new Player(name1, Figure.X);
         players[1] = new Player(name2, Figure.O);
 
-        final Game game = new Game(players, new Field(3), "TicTacToe");
+        final Game<Figure> game = new Game(players,new Field<> (3), "TicTacToe");
 
         final ConsoleView consoleView = new ConsoleView();
         consoleView.show(game);

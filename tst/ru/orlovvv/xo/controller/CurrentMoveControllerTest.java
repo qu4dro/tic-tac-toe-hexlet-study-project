@@ -15,7 +15,7 @@ class CurrentMoveControllerTest {
     void currentMoveO() throws InvalidPointException {
         final CurrentMoveController currentMoveController = new CurrentMoveController();
         for (int i = 0; i < 3; i++) {
-            final Field field = new Field(3);
+            final Field<Figure> field = new Field<Figure> (3);
             field.setFigure(new Point(i, 0), Figure.X);
             field.setFigure(new Point(i, 1), Figure.X);
             field.setFigure(new Point(i, 2), Figure.O);
@@ -28,7 +28,7 @@ class CurrentMoveControllerTest {
     void currentMoveX() throws InvalidPointException {
         final CurrentMoveController currentMoveController = new CurrentMoveController();
         for (int i = 0; i < 3; i++) {
-            final Field field = new Field(3);
+            final Field<Figure> field = new Field<Figure> (3);
             field.setFigure(new Point(i, 0), Figure.X);
             field.setFigure(new Point(i, 2), Figure.O);
             assertEquals(Figure.X, currentMoveController.currentMove(field));
@@ -39,7 +39,7 @@ class CurrentMoveControllerTest {
     @Test
     void currentMoveNull() throws InvalidPointException {
         final CurrentMoveController currentMoveController = new CurrentMoveController();
-            final Field field = new Field(3);
+            final Field<Figure> field = new Field<Figure> (3);
             field.setFigure(new Point(0, 0), Figure.X);
             field.setFigure(new Point(0, 1), Figure.X);
             field.setFigure(new Point(0, 2), Figure.O);
