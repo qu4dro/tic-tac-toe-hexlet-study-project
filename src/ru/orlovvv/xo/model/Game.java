@@ -20,8 +20,23 @@ public class Game<F> implements Iterable<Player> {
 
     @Override
     public Iterator<Player> iterator() {
-        final List<Player> playerList = Arrays.asList(players);
-        return playerList.iterator();
+        return new PlayerIterator();
+
+    }
+
+    private class PlayerIterator implements Iterator<Player> {
+
+        private int index = 0;
+
+        @Override
+        public boolean hasNext() {
+            return Game.this.players.length > index;
+        }
+
+        @Override
+        public Player next() {
+            return Game.this.players[index++];
+        }
     }
 
     public Player[] getPlayers() {
