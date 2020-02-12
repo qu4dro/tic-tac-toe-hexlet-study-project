@@ -1,6 +1,10 @@
 package ru.orlovvv.xo.model;
 
-public class Game<F> {
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+public class Game<F> implements Iterable<Player> {
 
     private final Player[] players;
 
@@ -12,6 +16,12 @@ public class Game<F> {
         this.players = players;
         this.field = field;
         this.name = name;
+    }
+
+    @Override
+    public Iterator<Player> iterator() {
+        final List<Player> playerList = Arrays.asList(players);
+        return playerList.iterator();
     }
 
     public Player[] getPlayers() {

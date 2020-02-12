@@ -3,7 +3,6 @@ package ru.orlovvv.xo.model;
 import ru.orlovvv.xo.model.exceptions.InvalidPointException;
 
 import java.awt.*;
-import java.util.Objects;
 
 public class Field<T> {
 

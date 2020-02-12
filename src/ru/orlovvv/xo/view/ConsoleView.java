@@ -6,6 +6,7 @@ import ru.orlovvv.xo.controller.WinnerController;
 import ru.orlovvv.xo.model.Field;
 import ru.orlovvv.xo.model.Figure;
 import ru.orlovvv.xo.model.Game;
+import ru.orlovvv.xo.model.Player;
 import ru.orlovvv.xo.model.exceptions.AlreadyOccupiedException;
 import ru.orlovvv.xo.model.exceptions.InvalidPointException;
 
@@ -20,6 +21,10 @@ public class ConsoleView {
     private final MoveController moveController = new MoveController();
 
     public void show(final Game<Figure> game) {
+
+        for (Player player : game) {
+            System.out.format("Player name: %s figure: %s\n", player.getName(), player.getFigure());
+        }
         System.out.format("Game name: %s\n", game.getName());
         final Field<Figure> field = game.getField();
         for (int x = 0; x < field.getSize(); x++) {
